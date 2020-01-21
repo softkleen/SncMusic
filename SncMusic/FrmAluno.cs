@@ -25,10 +25,8 @@ namespace SncMusic
             else sexo = "F";// resolve o sexo
             mskCPF.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             mskTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-
             Aluno aluno = new Aluno(txtNome.Text, mskCPF.Text, sexo, txtEmail.Text, mskTelefone.Text);
             aluno.Inserir();
-
             MessageBox.Show("Aluno Gravado com sucesso!");
             LimparControles();
 
@@ -55,21 +53,17 @@ namespace SncMusic
                 //se txtid for diferente de vazio então consulte o aluno
                 if (txtId.Text != string.Empty)
                 {
-                    //consulte o aluno
-                    var comm = Banco.Abrir();
-                    comm.CommandText = "select * from tb_aluno where id_aluno = "+ txtId.Text;
-                    var dr = comm.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        txtNome.Text = dr.GetString(1);
-                        txtEmail.Text = dr.GetString(4);
-                        mskCPF.Text = dr.GetString(2);                 
-                        if (dr.GetString(3) == "M")
-                            rdbMasculino.Checked = true;
-                        else
-                            rdbFeminino.Checked = true;
+                    Aluno aluno = new Aluno();
+                    aluno.ConsultarPorId(Convert.ToInt32(txtId.Text));
+                    txtEmail.Text = aluno.Email;
+                    mskCPF.Text = aluno.Cpf;
+                    mskTelefone.Text = aluno.Telefone;
+                    txtNome.Text = aluno.Nome;
+                    if (aluno.Sexo == "M")
+                        rdbMasculino.Checked = true;
+                    else
+                        rdbFeminino.Checked = true;
 
-                    }
                     //altere o texto do botão para "..."
                     btnBuscar.Text = "...";
                     //tornar o txtid Enable false
@@ -139,6 +133,16 @@ namespace SncMusic
             rdbMasculino.Checked = false;
             txtNome.Focus();
         }
-        
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            Aluno aluno = new Aluno();
+            var lista = aluno.ListarTodos();
+            foreach (var item in lista)
+            {
+                listBox1.Items.Add(item.Id +" - "+ item.Nome);
+            }
+        }
     }
 }

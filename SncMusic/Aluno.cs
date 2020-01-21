@@ -11,14 +11,16 @@ namespace SncMusic
 {
     public class Aluno 
     {
+        private int id;
         // atributos e propriedades
-        public int Id { get; set; }
+        //public int Id { get; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public string Sexo { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
         public DateTime DataCadastro { get; set; }
+        public int Id { get => id; set => id = value; }
 
         //métodos construtores
         public Aluno()
@@ -58,5 +60,60 @@ namespace SncMusic
             Id = Convert.ToInt32(comm.ExecuteScalar());
             comm.Connection.Close();
         }
+        public bool Alterar(Aluno aluno) 
+        {
+            
+            return true;
+        }
+        public void ConsultarPorId(int _id) 
+        {
+            //consulte o aluno
+            var comm = Banco.Abrir();
+            comm.CommandText = "select * from tb_aluno where id_aluno = " +_id;
+            var dr = comm.ExecuteReader();
+            while (dr.Read())
+            {
+                Nome = dr.GetString(1);
+                Email = dr.GetString(4);
+                Cpf = dr.GetString(2);
+                Sexo = dr.GetString(3);
+                Telefone = dr.GetString(5);
+                DataCadastro = Convert.ToDateTime(dr.GetValue(6));
+            }
+            Banco.Fechar();
+        }
+        public List<Aluno> ListarTodos() 
+        {
+            List<Aluno> listaAluno = new List<Aluno>();
+            var comm = Banco.Abrir();
+            comm.CommandText = "select * from tb_aluno order by 2 ";
+            var dr = comm.ExecuteReader();
+            while (dr.Read())
+            {
+                listaAluno.Add(new Aluno(dr.GetInt32(0),
+                    dr.GetString(1),
+                     dr.GetString(2),dr.GetString(3),
+                     dr.GetString(4),
+                     dr.GetString(5),
+                     Convert.ToDateTime(dr.GetValue(6))));
+
+
+                //Aluno aluno = new Aluno();
+                //aluno.Id = dr.GetInt32(0);
+                //aluno.Nome = dr.GetString(1);
+                //aluno.Email = dr.GetString(4);
+                //aluno.Cpf = dr.GetString(2);
+                //aluno.Sexo = dr.GetString(3);
+                //aluno.Telefone = dr.GetString(5);
+                //aluno.DataCadastro = Convert.ToDateTime(dr.GetValue(6));
+                //listaAluno.Add(aluno);
+
+
+            }
+            Banco.Fechar();
+
+            return listaAluno;
+        }
+
     }
 }

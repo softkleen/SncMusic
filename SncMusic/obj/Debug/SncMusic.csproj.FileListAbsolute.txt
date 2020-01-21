@@ -4,7 +4,6 @@ C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\bin\Debug\SncMusic.p
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.csprojAssemblyReference.cache
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.Properties.Resources.resources
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.csproj.GenerateResource.cache
-C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.csproj.CoreCompileInputs.cache
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.exe
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.pdb
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.FrmPrincipal.resources

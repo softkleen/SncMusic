@@ -45,6 +45,8 @@
             this.mskCPF = new System.Windows.Forms.MaskedTextBox();
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnListar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNome
@@ -60,7 +62,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(158, 20);
             this.txtEmail.TabIndex = 3;
-            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -205,11 +207,31 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(483, 64);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(268, 225);
+            this.listBox1.TabIndex = 18;
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(676, 295);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.TabIndex = 19;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
             // FrmAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.mskCPF);
@@ -253,5 +275,7 @@
         private System.Windows.Forms.MaskedTextBox mskCPF;
         private System.Windows.Forms.MaskedTextBox mskTelefone;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnListar;
     }
 }
