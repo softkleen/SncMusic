@@ -45,6 +45,13 @@ namespace SncMusic
             Telefone = _telefone;
             Email = _email;
         }
+        public Aluno(int _id, string _nome, string _sexo, string _telefone)
+        {
+            Nome = _nome;
+            Sexo = _sexo;
+            Telefone = _telefone;
+            Id = _id;
+        }
         //métodos da classe
         public void Inserir()
         {
@@ -62,8 +69,24 @@ namespace SncMusic
         }
         public bool Alterar(Aluno aluno) 
         {
-            
-            return true;
+            try //bloco de tratamento de excessão
+            {
+                var comm = Banco.Abrir();
+                comm.CommandText = "update tb_aluno set nome_aluno = @nome,sexo_aluno = @sexo," +
+                    "telefone_aluno=@telefone where id_aluno = @id";
+                comm.Parameters.Add("@nome", MySqlDbType.VarChar).Value = aluno.Nome;
+                comm.Parameters.Add("@sexo", MySqlDbType.VarChar).Value = aluno.Sexo;
+                comm.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = aluno.Telefone;
+                comm.Parameters.Add("@id", MySqlDbType.Int32).Value = aluno.Id;
+                comm.ExecuteNonQuery();
+                Banco.Fechar();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+           
         }
         public void ConsultarPorId(int _id) 
         {

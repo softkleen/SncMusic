@@ -95,14 +95,15 @@ namespace SncMusic
             if (rdbMasculino.Checked) sexo = "M";
             else sexo = "F";// resolve o sexo
             mskTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            var comm = Banco.Abrir();
-            comm.CommandText = "update tb_aluno set nome_aluno = '"+txtNome.Text+"'," +
-                " sexo_aluno = '"+sexo+ "', telefone_aluno = '"+mskTelefone.Text +
-                "' where id_aluno = "+txtId.Text;
-            comm.ExecuteNonQuery();
-            comm.Connection.Close();
-            MessageBox.Show("Dados do aluno alterados com sucesso!");
-            LimparControles();
+            Aluno aluno = new Aluno();
+            if (aluno.Alterar(new Aluno(Convert.ToInt32(txtId.Text), txtNome.Text, sexo, mskTelefone.Text)))
+            {
+                MessageBox.Show("Dados do aluno alterados com sucesso!");
+                LimparControles();
+            }
+            else
+                MessageBox.Show("Falha ao alterar dados do aluno!");
+            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

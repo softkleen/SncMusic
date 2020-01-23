@@ -16,3 +16,4 @@ C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\bin\Debug\MySql.Data
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\bin\Debug\Renci.SshNet.xml
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.FrmAluno.resources
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.csproj.CopyComplete
+C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.FrmProfessor.resources
