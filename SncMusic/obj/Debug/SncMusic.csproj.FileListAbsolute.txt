@@ -17,3 +17,4 @@ C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\bin\Debug\Renci.SshN
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.FrmAluno.resources
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.csproj.CopyComplete
 C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.FrmProfessor.resources
+C:\Users\wellington.vsantos4\source\repos\SncMusic\SncMusic\obj\Debug\SncMusic.FrmCurso.resources

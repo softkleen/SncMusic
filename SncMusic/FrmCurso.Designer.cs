@@ -40,11 +40,11 @@
             this.txtCargaHoraria = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAssociar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnAssociar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,7 @@
             this.btnInserir.TabIndex = 0;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnConsultar
             // 
@@ -153,30 +154,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Associar Professor";
             // 
-            // btnAssociar
+            // label6
             // 
-            this.btnAssociar.Location = new System.Drawing.Point(404, 60);
-            this.btnAssociar.Name = "btnAssociar";
-            this.btnAssociar.Size = new System.Drawing.Size(75, 23);
-            this.btnAssociar.TabIndex = 0;
-            this.btnAssociar.Text = "Associar";
-            this.btnAssociar.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(21, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 21);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(218, 62);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(180, 21);
-            this.comboBox2.TabIndex = 2;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(215, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Professor";
             // 
             // label5
             // 
@@ -187,14 +172,30 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Curso";
             // 
-            // label6
+            // comboBox2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(215, 43);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Professor";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(218, 62);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(180, 21);
+            this.comboBox2.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(21, 62);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(191, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // btnAssociar
+            // 
+            this.btnAssociar.Location = new System.Drawing.Point(404, 60);
+            this.btnAssociar.Name = "btnAssociar";
+            this.btnAssociar.Size = new System.Drawing.Size(75, 23);
+            this.btnAssociar.TabIndex = 0;
+            this.btnAssociar.Text = "Associar";
+            this.btnAssociar.UseVisualStyleBackColor = true;
             // 
             // FrmCurso
             // 

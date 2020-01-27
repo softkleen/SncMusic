@@ -33,6 +33,9 @@ namespace SncMusic
 
         private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FrmCurso frmCurso = new FrmCurso();
+            frmCurso.MdiParent = this;
+            frmCurso.Show();
 
         }
     }
