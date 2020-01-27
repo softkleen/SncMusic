@@ -49,6 +49,13 @@ namespace SncMusic
             Telefone = _telefone;
             Id = _id;
         }
+        public Professor(int _id, string _nome, string _cpf, string _email)
+        {
+            Nome = _nome;
+            Cpf = _cpf;
+            Id = _id;
+            Email = _email;
+        }
         //métodos da classe
         public void Inserir()
         {
