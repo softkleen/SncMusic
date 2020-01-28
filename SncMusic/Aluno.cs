@@ -137,6 +137,14 @@ namespace SncMusic
 
             return listaAluno;
         }
+        public MySqlDataReader ListarTodos(string caracter)
+        {
+            List<Aluno> listaAluno = new List<Aluno>();
+            var comm = Banco.Abrir();
+            comm.CommandText = "select * from tb_aluno where nome_aluno like '%"+caracter+"%'";
+            var dr = comm.ExecuteReader();
+            return dr;
+        }
 
     }
 }
