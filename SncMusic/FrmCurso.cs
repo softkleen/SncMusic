@@ -38,5 +38,22 @@ namespace SncMusic
 
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            Curso curso = new Curso();
+            var dr = curso.ListarTodos();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            cmbCurso.DataSource = dt;
+            cmbCurso.DisplayMember = "nome_curso";
+            cmbCurso.ValueMember = "id_curso";
+
+        }
     }
 }

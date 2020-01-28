@@ -42,8 +42,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbProfessor = new System.Windows.Forms.ComboBox();
+            this.cmbCurso = new System.Windows.Forms.ComboBox();
             this.btnAssociar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -144,8 +144,8 @@
             // 
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbProfessor);
+            this.groupBox1.Controls.Add(this.cmbCurso);
             this.groupBox1.Controls.Add(this.btnAssociar);
             this.groupBox1.Location = new System.Drawing.Point(61, 249);
             this.groupBox1.Name = "groupBox1";
@@ -172,21 +172,23 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Curso";
             // 
-            // comboBox2
+            // cmbProfessor
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(218, 62);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(180, 21);
-            this.comboBox2.TabIndex = 2;
+            this.cmbProfessor.FormattingEnabled = true;
+            this.cmbProfessor.Location = new System.Drawing.Point(218, 62);
+            this.cmbProfessor.Name = "cmbProfessor";
+            this.cmbProfessor.Size = new System.Drawing.Size(180, 21);
+            this.cmbProfessor.TabIndex = 2;
             // 
-            // comboBox1
+            // cmbCurso
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(21, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cmbCurso.FormattingEnabled = true;
+            this.cmbCurso.Location = new System.Drawing.Point(21, 62);
+            this.cmbCurso.Name = "cmbCurso";
+            this.cmbCurso.Size = new System.Drawing.Size(191, 21);
+            this.cmbCurso.TabIndex = 1;
+            this.cmbCurso.DropDown += new System.EventHandler(this.comboBox1_DropDown);
+            this.cmbCurso.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnAssociar
             // 
@@ -239,8 +241,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbProfessor;
+        private System.Windows.Forms.ComboBox cmbCurso;
         private System.Windows.Forms.Button btnAssociar;
     }
 }

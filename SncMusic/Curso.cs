@@ -125,6 +125,22 @@ namespace SncMusic
             }
 
         }
+        public MySqlDataReader ListarTodos()
+        {
+            MySqlDataReader dr;
+            try
+            {
+                var comm = Banco.Abrir();
+                comm.CommandText = "select * from tb_curso";
+                dr = comm.ExecuteReader();
+                return dr;
+            }
+            catch (Exception)
+            {                
+                return dr=null;
+            }
+            
+        }
         public bool AssociarProfessor(int _id_curso, int _id_professor)
         {
             try
