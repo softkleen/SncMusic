@@ -198,6 +198,7 @@
             this.btnAssociar.TabIndex = 0;
             this.btnAssociar.Text = "Associar";
             this.btnAssociar.UseVisualStyleBackColor = true;
+            this.btnAssociar.Click += new System.EventHandler(this.BtnAssociar_Click);
             // 
             // FrmCurso
             // 

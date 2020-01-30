@@ -124,6 +124,50 @@ namespace SncMusic
 
             return listaProfessor;
         }
+        public MySqlDataReader ListarPorNome()
+        {
+            var comm = Banco.Abrir();
+            comm.CommandText = "select id_professor, nome_professor from tb_professor";
+            var dr = comm.ExecuteReader();
+            return dr;
+        }
+        public DataTable ListarPorIdNaoAssociado(string idCurso)
+        {
+            DataTable dtProfessor = new DataTable();
+            
 
+            var comm = Banco.Abrir();
+            comm.CommandText = "select professor_id_professor from tb_professor_curso where curso_id_curso =" + idCurso;
+            var dr = comm.ExecuteReader(); //executa a consulta no banco de dados
+            List<int> ProfAssoc= new List<int>(); // declara lista de inteiros para armazenar id já associados
+           
+            if (dr.HasRows)// verifica se a consulta retonou valores
+            { 
+                while (dr.Read()) //eanquanto exisitirem linhas de resultado
+                {
+                    ProfAssoc.Add(dr.GetInt32(0)); // associa as linhas à coleção
+                }// fim enquanto
+                dr.Close(); // fecha o leitor de dados
+                dtProfessor.Columns.Add("id_professor", typeof(int));
+                dtProfessor.Columns.Add("nome_professor", typeof(string));
+                comm.CommandText = "select id_professor, nome_professor from tb_professor";
+                dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    if (!ProfAssoc.Contains(dr.GetInt32(0)))
+                        dtProfessor.Rows.Add(dr.GetInt32(0), dr.GetString(1));              
+                }
+
+            }
+            else
+            {
+                dr.Close();
+                comm.CommandText = "select id_professor, nome_professor from tb_professor";
+                dtProfessor.Load(comm.ExecuteReader());
+            }
+
+            
+            return dtProfessor;
+        }
     }
 }
