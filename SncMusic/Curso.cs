@@ -49,12 +49,11 @@ namespace SncMusic
             try
             {
                 var comm = Banco.Abrir();
-                comm.CommandText = "insert into tb_curso values(0,@nome, @carga_horaria,@valor)";
-                comm.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
-                comm.Parameters.Add("@carga_horaria", MySqlDbType.Int32).Value = CargaHoraria;
-                comm.Parameters.Add("@valor", MySqlDbType.Decimal).Value = Valor;
-                comm.ExecuteNonQuery();
-                comm.CommandText = "select @@identity";
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_insere_curso";
+                comm.Parameters.Add("spnome", MySqlDbType.VarChar).Value = Nome;
+                comm.Parameters.Add("spcargahoraria", MySqlDbType.Int32).Value = CargaHoraria;
+                comm.Parameters.Add("spvalor", MySqlDbType.Decimal).Value = Valor;
                 Id = Convert.ToInt32(comm.ExecuteScalar());
                 Banco.Fechar();
             }

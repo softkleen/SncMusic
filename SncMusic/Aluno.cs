@@ -53,6 +53,9 @@ namespace SncMusic
             Id = _id;
         }
         //métodos da classe
+        /// <summary>
+        /// 
+        /// </summary>
         public void Inserir()
         {
             MySqlCommand comm = Banco.Abrir();
@@ -67,6 +70,11 @@ namespace SncMusic
             Id = Convert.ToInt32(comm.ExecuteScalar());
             comm.Connection.Close();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aluno"></param>
+        /// <returns></returns>
         public bool Alterar(Aluno aluno) 
         {
             try //bloco de tratamento de excessão

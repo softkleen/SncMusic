@@ -20,6 +20,8 @@ namespace SncMusic
         
         private void button1_Click(object sender, EventArgs e)
         {
+            //var x = e;
+            //var y = sender;
             string sexo;
             if (rdbMasculino.Checked) sexo = "M";
             else sexo = "F";// resolve o sexo
