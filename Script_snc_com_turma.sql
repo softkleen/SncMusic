@@ -119,8 +119,6 @@ CREATE TABLE IF NOT EXISTS `dbsncmusic01`.`tb_matricula` (
   `id_aluno_mat` INT(11) NOT NULL,
   `id_turma` INT(11) NOT NULL,
   `situacao` CHAR(1) NOT NULL,
-  `horario` VARCHAR(10) NOT NULL,
-  `dia_semana` VARCHAR(45) NOT NULL,
   `valor_curso_matricula` DECIMAL(10,2) NOT NULL,
   `data_matricula` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
   `usuario_id_usuario` INT(11) NOT NULL,
